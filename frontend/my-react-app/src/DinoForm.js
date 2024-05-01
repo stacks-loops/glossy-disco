@@ -4,23 +4,34 @@ import { v4 as uuidv4 } from 'uuid'
 
 const initialFormData = {
     title: '', 
-    steps: []
+    steps: [
+        { id: uuidv4(), exerciseName: '', description: '', sets: '', reps: '', interval: '' }
+    ]
 }
 
-const workoutStep = {
-    exerciseName: '',
-    description: '',
-    sets: '',
-    reps: '',
-    interval: ''
-}
+// const workoutStep = {
+//     exerciseName: '',
+//     description: '',
+//     sets: '',
+//     reps: '',
+//     interval: ''
+// }
 
 function DinoForm() {
     return (
         <Formik 
         initialValues={initialFormData}
         onSubmit={(values) => console.log(values)}
-        ></Formik>
+        >
+        {({ values, setFieldValue }) => (
+            <Form>
+                <Field type="text" name="title" placeholder="Workout Title" />
+
+                <button type="submit">Submit</button>
+            </Form>
+            
+        )}
+        </Formik>
     )
 }
 
