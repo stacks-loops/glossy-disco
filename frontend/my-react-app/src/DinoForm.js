@@ -9,13 +9,14 @@ const initialFormData = {
     ]
 }
 
-// const workoutStep = {
-//     exerciseName: '',
-//     description: '',
-//     sets: '',
-//     reps: '',
-//     interval: ''
-// }
+const workoutStep = {
+    exerciseName: '',
+    description: '',
+    sets: '',
+    reps: '',
+    intervalType: 'days',
+    intervalValue: ''
+}
 
 function DinoForm() {
     return (
@@ -33,10 +34,10 @@ function DinoForm() {
                             {values.steps.map((step, index) => (
                                 <div key={step.id}>
                                     <Field type="text" name={`steps[${index}].exerciseName`} placeholder="Exercise Name" />
-                                    <Field as="select" name={`steps[${index}].interval`}>
-                                        <option value="daily">Daily</option>
-                                        <option value="every2days">Every 2 Days</option>
+                                    <Field as="select" name={`steps[${index}].intervalType`}>
+                                        <option value="days">Days</option>
                                     </Field>
+                                    <Field type="number" name={`steps[${index}].intervalValue`} placeholder="Repeat Every.... days"/>
 
 
 
