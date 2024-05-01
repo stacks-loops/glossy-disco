@@ -4,5 +4,4 @@ from app import app
 
 @app.route('/')
 def index():
-    current_time = datetime.datetime.now()
-    return render_template('index.html', time=current_time) 
+    return ("Hello world welcome to glossy disco")
