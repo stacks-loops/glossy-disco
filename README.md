@@ -14,10 +14,6 @@ runtime environment and flask commands should be in mac terminal cd glossy-disco
 parkerconnolly@Parkers-MacBook-Air glossy-disco % source .venv/bin/activate
 
 from glossy-disco
-flask run
-
-from glossy-dicso
-pipenv shell
-flask shell
-
+python -m venv .venv
+source .venv/bin/activate
 
