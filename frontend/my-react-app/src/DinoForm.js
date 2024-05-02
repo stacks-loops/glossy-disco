@@ -1,6 +1,25 @@
 import React from 'react'
-import { Formik, Form, Field } from 'formik'
+import { Formik, Form, Field, FieldArray } from 'formik'
 import { v4 as uuidv4 } from 'uuid'
+import * as Yup from 'yup'
+
+// const workoutStepSchema = Yup.object().shape({
+//     exerciseName: Yup.string().required('Exercise name is required'),
+//     intervalType: Yup.string().oneOf(['days'], 'Currently only "days" interval is supported'), 
+//     intervalValue: Yup.number()
+//       .required('Interval value is required')
+//       .positive('Interval must be a positive number')
+//       .integer('Interval must be whole days'),
+//   });
+  
+//   const formSchema = Yup.object().shape({
+//     title: Yup.string().required('Workout title is required'),
+//     steps: Yup.array()
+//       .of(workoutStepSchema)
+//       .min(1, 'You must add at least one workout step'),
+//   });
+
+
 
 const initialFormData = {
     title: '', 
@@ -9,14 +28,14 @@ const initialFormData = {
     ]
 }
 
-const workoutStep = {
-    exerciseName: '',
-    description: '',
-    sets: '',
-    reps: '',
-    intervalType: 'days',
-    intervalValue: ''
-}
+// const workoutStep = {
+//     exerciseName: '',
+//     description: '',
+//     sets: '',
+//     reps: '',
+//     intervalType: 'days',
+//     intervalValue: ''
+// }
 
 function DinoForm() {
     return (

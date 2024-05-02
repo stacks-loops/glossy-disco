@@ -1,4 +1,6 @@
-import logo from './logo.svg';
+import React from 'react'
+import DinoForm from './DinoForm.js'
+import SimpleForm from './SimpleForm';
 import './App.css';
 
 function App() {
@@ -9,18 +11,8 @@ function App() {
 
   return (
     <div className="App">
-      <form onSubmit={handleSubmit}>  
-      <label htmlFor="description">Description:</label>
-        <input type="text" id="description" name="description" />
-
-        <label htmlFor="interval">Interval:</label>
-        <select id="interval" name="interval">
-           <option value="daily">Daily</option>
-           {/* ...other options ...*/}
-        </select>
-        <button type="submit">Submit</button>
-      </form>
-    </div>
+      <DinoForm onSubmit={handleSubmit} />
+  </div>
   );
 }
 
