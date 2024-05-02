@@ -1,6 +1,6 @@
 import React from 'react'
 import DinoForm from './DinoForm.js'
-import SimpleForm from './SimpleForm';
+import SimpleForm from './SimpleForm.js';
 import './App.css';
 
 function App() {
