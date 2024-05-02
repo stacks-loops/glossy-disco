@@ -1,6 +1,6 @@
 from flask import render_template, request, jsonify
 from backend import app, db
-from glossy_disco.models import Workout, Step
+from models import Workout, Step
 
 @app.route('/')
 def index():

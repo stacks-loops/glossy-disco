@@ -1,0 +1,11 @@
+# pip install -r \requirements.txt
+
+flask
+flask-sqlalchemy
+flask-bcrypt
+python-dotenv
+flask-session
+redis
+flask-cors
+WTforms==2.3.3
+sqlalchemy-serializer

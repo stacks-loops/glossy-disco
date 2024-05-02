@@ -1,4 +1,11 @@
-from .backend import db
+from flask_sqlalchemy import SQLAlchemy
+from uuid import uuid4
+from sqlalchemy_serializer import SerializerMixin
+
+db = SQLAlchemy()
+
+def get_uuid():
+    return uuid4().hex
 
 class Workout(db.Model):
     id = db.Column(db.string, primary_key=True)
