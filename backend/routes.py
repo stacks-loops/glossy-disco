@@ -1,6 +1,6 @@
 from flask import render_template, request, jsonify
-import datetime
 from backend import app, db
+from glossy_disco.models import Workout, Step
 
 @app.route('/')
 def index():

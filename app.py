@@ -1,36 +1,17 @@
-from flask import Flask
+from flask import Flask, request, jsonify
 from flask_sqlalchemy import SQLAlchemy  # Import for database 
-from backend import db, routes  # Import your database object 
+
+
+from glossy_disco.models import Workout, Step
 
 app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///workouts.db'  
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False 
 
 db = SQLAlchemy(app)
 
-@app.route('/')  # Example route 
-def hello_world():
-    return 'Hello from Glossy Disco!'
+#import routes
+from .backend.routes import *
 
-@app.route('/add-workout', methods=['POST'])
-def add_workout():
-    data = request.get_json()
-
-    workout = Workout(title=data['title'])
-
-    for step in data['steps']:
-        new_step = Step(
-            exercise_name=step['exerciseName'],
-            description=step['description'], 
-            sets=step['sets'],
-            reps=step['reps'],
-            interval_type=step['intervalType'],
-            interval_value=step['intervalValue'],
-            workout=workout
-        )
-        db.session.add(new_step)
-
-    db.session.add(workout) 
-    db.session.commit()
-
-    return jsonify({'message': 'Workout created successfully!'}), 201 
 if __name__ == '__main__': 
     app.run(debug=True) 

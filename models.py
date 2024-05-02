@@ -1,4 +1,4 @@
-from . import db
+from .backend import db
 
 class Workout(db.Model):
     id = db.Column(db.string, primary_key=True)
