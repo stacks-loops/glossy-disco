@@ -6,8 +6,14 @@ name = "pypi"
 [packages]
 flask = "*"
 flask-sqlalchemy = "*"
-qrcode = "*"
-jinja2 = "*"
+flask-bcrypt = "*"
+python-dotenv = "*"
+flask-session = "*"
+redis = "*"
+flask-cors = "*"
+wtforms = "==2.3.3"
+sqlalchemy-serializer = "*"
+ipdb = "*"
 
 [dev-packages]
 
