@@ -11,3 +11,7 @@ npm start
 
 from glossy-disco
 flask run
+
+from glossy-dicso
+pipenv shell
+flask shell

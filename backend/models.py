@@ -3,6 +3,7 @@ from . import db
 class Workout(db.Model):
     id = db.Column(db.string, primary_key=True)
     title = db.Column(db.String(80), nullable=False)
+    qr_code_data = db.Column(db.Text)
     steps = db.relationship('Step', backref='workout', lazy="True")
 
 class Step(db.Model):
