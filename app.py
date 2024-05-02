@@ -1,11 +1,14 @@
-from flask import render_template, request, jsonify
-import datetime
-from backend import app, db
+from flask import Flask
+from flask_sqlalchemy import SQLAlchemy  # Import for database 
+from backend import db, routes  # Import your database object 
 
-@app.route('/')
-def index():
-    message = "Hello from the otherside"
-    return render_template('index.html', text_content=message)
+app = Flask(__name__)
+
+db = SQLAlchemy(app)
+
+@app.route('/')  # Example route 
+def hello_world():
+    return 'Hello from Glossy Disco!'
 
 @app.route('/add-workout', methods=['POST'])
 def add_workout():
@@ -29,3 +32,5 @@ def add_workout():
     db.session.commit()
 
     return jsonify({'message': 'Workout created successfully!'}), 201 
+if __name__ == '__main__': 
+    app.run(debug=True) 
